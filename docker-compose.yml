@@ -1,0 +1,15 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+version: '3.4'
+
+services:
+  catalog.api:
+    image: catalogapi
+    build:
+      context: .
+      dockerfile: src/Services/Catalog.Api/Dockerfile
+
+  catalogdb:
+    image: mongo
+
+volumes:
+    mongo_data: 
